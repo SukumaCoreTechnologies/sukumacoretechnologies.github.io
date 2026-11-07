@@ -1,0 +1,45 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sukuma Core Media Downloader</title>
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head><body>
+<canvas id="bg"></canvas>
+<main>
+<h1>SUKUMA CORE</h1><p class="sub">MEDIA DOWNLOADER</p>
+<section>
+<h2>Download here</h2>
+<p id="helper" class="bad">Looking for the helper app...</p>
+<input id="u" placeholder="Paste a link here">
+<select id="q">
+<option value="360">360p (free)</option>
+<option value="480" selected>480p (free)</option>
+<option value="720">720p (Pro)</option>
+<option value="1080">1080p (Pro)</option>
+<option value="2160">4K (Pro)</option>
+<option value="best">Best available (Pro)</option>
+</select>
+<div class="row"><button id="v">Video</button><button id="a" class="ghost">Audio (MP3)</button></div>
+<p id="st"></p>
+</section>
+<section>
+<h2>The helper app</h2>
+<p>It runs on your own computer and does the downloading, so nothing is sent to anyone else's server. Installers are coming soon.</p>
+</section>
+<section>
+<h2>Free and Pro</h2>
+<div class="grid">
+<div class="plan"><h3>Free</h3><ul><li>360p and 480p video</li><li>MP3 audio</li><li>No ads</li></ul></div>
+<div class="plan"><h3>Pro</h3><ul><li>720p, 1080p and 4K</li><li>Everything in Free</li></ul><a class="btn" id="buy" href="#">Buy Pro (soon)</a></div>
+</div>
+</section>
+<section>
+<h2>Activate Pro</h2>
+<p id="plan" class="ok"></p>
+<input id="k" placeholder="Paste your license key">
+<button id="act">Activate</button>
+<p id="lst"></p>
+</section>
+<small>Only download content you own or have permission to save.</small>
+</main>
+<script src="doodles.js"></script><script src="app.js"></script>
+</body></html>

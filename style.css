@@ -1,0 +1,22 @@
+*{box-sizing:border-box}
+body{margin:0;background:#070b08;color:#d7f5df;font-family:"Special Elite","Courier New",monospace;line-height:1.5}
+#bg{position:fixed;top:0;left:0;z-index:0;pointer-events:none}
+main{position:relative;z-index:1;max-width:720px;margin:0 auto;padding:28px 16px 60px}
+h1{color:#2ee66b;font-size:44px;letter-spacing:3px;text-align:center;margin:10px 0 0;text-shadow:0 0 14px rgba(46,230,107,.5)}
+.sub{color:#2ee66b;text-align:center;letter-spacing:5px;margin:0 0 28px}
+section{background:rgba(14,23,18,.86);border:1px solid #1f5c35;border-radius:14px;padding:18px;margin:0 0 18px}
+h2{color:#2ee66b;margin:0 0 10px}
+input,select,button{width:100%;padding:15px;margin:6px 0;border-radius:10px;font:inherit;font-size:17px;text-align:center}
+input,select{background:#0e1712;color:#d7f5df;border:1px solid #1f5c35}
+button,.btn{display:block;border:0;background:#2ee66b;color:#06210f;font-weight:bold;cursor:pointer;text-align:center;text-decoration:none;padding:15px;border-radius:10px}
+button.ghost{background:transparent;color:#2ee66b;border:1px solid #2ee66b}
+.row{display:flex;gap:10px}.row>*{flex:1}
+#helper{text-align:center;margin:0 0 8px}
+.ok{color:#2ee66b}.bad{color:#ff7a7a}
+#st,#lst{min-height:22px;text-align:center;color:#8fe0a8}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.plan{border:1px solid #1f5c35;border-radius:12px;padding:12px}
+.plan h3{margin:0 0 6px;color:#2ee66b}
+.plan ul{margin:0 0 10px;padding-left:18px}
+small{color:#6fa383;display:block;text-align:center;margin-top:20px}
+@media(max-width:520px){.grid{grid-template-columns:1fr}h1{font-size:34px}}
