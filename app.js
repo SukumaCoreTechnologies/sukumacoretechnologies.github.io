@@ -48,3 +48,31 @@ $("v").onclick = () => go("video");
 $("a").onclick = () => go("audio");
 $("act").onclick = activate;
 ping(); setInterval(ping, 5000);
+const LINK = /^https?:\/\/\S+$/i;
+let lastClip = "";
+function offer(text) {
+  text = (text || "").trim();
+  if (!LINK.test(text) || text === lastClip || text === $("u").value.trim()) return;
+  lastClip = text;
+  $("clipText").textContent = text.length > 60 ? text.slice(0, 57) + "..." : text;
+  $("clip").dataset.url = text;
+  $("clip").hidden = false;
+}
+async function checkClipboard() {
+  try { offer(await navigator.clipboard.readText()); } catch (e) {}
+}
+window.addEventListener("focus", checkClipboard);
+document.addEventListener("visibilitychange", () => { if (!document.hidden) checkClipboard(); });
+document.addEventListener("paste", (e) => {
+  if (document.activeElement && document.activeElement.tagName === "INPUT") return;
+  const t = e.clipboardData ? e.clipboardData.getData("text").trim() : "";
+  if (LINK.test(t)) { $("u").value = t; $("clip").hidden = true; }
+});
+$("useClip").onclick = () => { $("u").value = $("clip").dataset.url; $("clip").hidden = true; };
+$("pasteBtn").onclick = async () => {
+  try {
+    const t = (await navigator.clipboard.readText()).trim();
+    if (LINK.test(t)) { $("u").value = t; $("clip").hidden = true; }
+    else $("st").textContent = "No link found on the clipboard.";
+  } catch (e) { $("st").textContent = "Your browser blocked clipboard access. Long-press the box and paste."; }
+};
